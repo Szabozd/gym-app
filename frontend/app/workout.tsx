@@ -14,13 +14,13 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useGymStore, WorkoutExercise, Set } from '../store/gymStore';
-import { useLanguageStore } from '../store/languageStore';
+import { useTranslation } from '../store/languageStore';
 import { exerciseLibrary } from '../data/exercises';
 
 export default function WorkoutScreen() {
   const insets = useSafeAreaInsets();
   const { addWorkout, routines } = useGymStore();
-  const { t } = useLanguageStore();
+  const { t } = useTranslation();
   const [isWorkoutActive, setIsWorkoutActive] = useState(false);
   const [workoutName, setWorkoutName] = useState('');
   const [exercises, setExercises] = useState<WorkoutExercise[]>([]);

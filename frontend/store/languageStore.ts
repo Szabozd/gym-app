@@ -275,3 +275,13 @@ export const useLanguageStore = create<LanguageStore>()(
     }
   )
 );
+
+// Helper hook that ensures re-render on language change
+export function useTranslation() {
+  const language = useLanguageStore((s) => s.language);
+  const setLanguage = useLanguageStore((s) => s.setLanguage);
+  const t = (key: string): string => {
+    return translations[language][key] || translations['en'][key] || key;
+  };
+  return { t, language, setLanguage };
+}

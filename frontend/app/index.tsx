@@ -11,7 +11,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useGymStore } from '../store/gymStore';
-import { useLanguageStore } from '../store/languageStore';
+import { useTranslation } from '../store/languageStore';
 import LanguageToggle from '../components/LanguageToggle';
 import { format, isToday, isThisWeek } from 'date-fns';
 
@@ -19,7 +19,7 @@ export default function HomeScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { workouts, loadData } = useGymStore();
-  const { t } = useLanguageStore();
+  const { t } = useTranslation();
   const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {

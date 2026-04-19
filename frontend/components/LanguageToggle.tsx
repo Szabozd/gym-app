@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useLanguageStore } from '../store/languageStore';
+import { useTranslation } from '../store/languageStore';
 
 export default function LanguageToggle() {
-  const { language, setLanguage } = useLanguageStore();
+  const { language, setLanguage } = useTranslation();
 
   return (
     <View style={styles.container} testID="language-toggle">

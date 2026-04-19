@@ -3,10 +3,10 @@ import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { View, StyleSheet } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useLanguageStore } from '../store/languageStore';
+import { useTranslation } from '../store/languageStore';
 
 export default function Layout() {
-  const { t } = useLanguageStore();
+  const { t } = useTranslation();
 
   return (
     <SafeAreaProvider>

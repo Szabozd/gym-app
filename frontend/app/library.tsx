@@ -10,12 +10,12 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { useLanguageStore } from '../store/languageStore';
+import { useTranslation } from '../store/languageStore';
 import { exerciseLibrary } from '../data/exercises';
 
 export default function LibraryScreen() {
   const insets = useSafeAreaInsets();
-  const { t } = useLanguageStore();
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedMuscle, setSelectedMuscle] = useState('All');
   const [selectedType, setSelectedType] = useState<'all' | 'calisthenics' | 'gym'>('all');

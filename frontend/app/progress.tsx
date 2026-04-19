@@ -10,7 +10,7 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useGymStore } from '../store/gymStore';
-import { useLanguageStore } from '../store/languageStore';
+import { useTranslation } from '../store/languageStore';
 import { BarChart, LineChart } from 'react-native-gifted-charts';
 import { format, subDays, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns';
 
@@ -21,7 +21,7 @@ const dayLabelsHU = ['Hé', 'Ke', 'Sze', 'Csü', 'Pé', 'Szo', 'Vas'];
 export default function ProgressScreen() {
   const insets = useSafeAreaInsets();
   const { workouts } = useGymStore();
-  const { t, language } = useLanguageStore();
+  const { t, language } = useTranslation();
   const [selectedPeriod, setSelectedPeriod] = useState<'week' | 'month' | 'all'>('week');
 
   const dayLabels = language === 'hu' ? dayLabelsHU : dayLabelsEN;

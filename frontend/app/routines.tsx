@@ -14,13 +14,13 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useGymStore, Routine } from '../store/gymStore';
-import { useLanguageStore } from '../store/languageStore';
+import { useTranslation } from '../store/languageStore';
 import { exerciseLibrary } from '../data/exercises';
 
 export default function RoutinesScreen() {
   const insets = useSafeAreaInsets();
   const { routines, addRoutine, updateRoutine, deleteRoutine } = useGymStore();
-  const { t } = useLanguageStore();
+  const { t } = useTranslation();
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [editingRoutine, setEditingRoutine] = useState<Routine | null>(null);
   const [routineName, setRoutineName] = useState('');
