@@ -102,6 +102,15 @@ export default function HomeScreen() {
               <Text style={styles.actionText}>{t('home.myRoutines')}</Text>
             </TouchableOpacity>
           </View>
+          <TouchableOpacity
+            testID="view-history-btn"
+            style={styles.historyButton}
+            onPress={() => router.push('/history')}
+          >
+            <Ionicons name="time" size={20} color="#4CAF50" />
+            <Text style={styles.historyButtonText}>{t('history.viewHistory')}</Text>
+            <Ionicons name="chevron-forward" size={18} color="#555" />
+          </TouchableOpacity>
         </View>
 
         {/* Recent Workouts */}
@@ -216,6 +225,21 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginTop: 8,
     fontSize: 14,
+  },
+  historyButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#1e1e1e',
+    borderRadius: 12,
+    padding: 14,
+    marginTop: 12,
+    gap: 10,
+  },
+  historyButtonText: {
+    flex: 1,
+    color: '#ccc',
+    fontSize: 15,
+    fontWeight: '500',
   },
   workoutCard: {
     backgroundColor: '#1e1e1e',

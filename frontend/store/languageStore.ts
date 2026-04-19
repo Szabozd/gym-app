@@ -30,9 +30,18 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Home',
     'nav.workout': 'Workout',
+    'nav.history': 'History',
     'nav.routines': 'Routines',
     'nav.library': 'Library',
     'nav.progress': 'Progress',
+    
+    // History Screen
+    'history.totalWorkouts': 'workouts total',
+    'history.noWorkouts': 'No workout history',
+    'history.noWorkoutsHint': 'Complete a workout to see it here',
+    'history.deleteWorkout': 'Delete Workout',
+    'history.deleteConfirm': 'Are you sure you want to delete this workout?',
+    'history.viewHistory': 'Workout History',
     
     // Home Screen
     'home.quickActions': 'Quick Actions',
@@ -153,9 +162,18 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Kezdőlap',
     'nav.workout': 'Edzés',
+    'nav.history': 'Előzmény',
     'nav.routines': 'Tervek',
     'nav.library': 'Gyakorlatok',
     'nav.progress': 'Haladás',
+    
+    // History Screen
+    'history.totalWorkouts': 'edzés összesen',
+    'history.noWorkouts': 'Nincs edzéselőzmény',
+    'history.noWorkoutsHint': 'Végezz egy edzést, hogy itt megjelenjen',
+    'history.deleteWorkout': 'Edzés törlése',
+    'history.deleteConfirm': 'Biztosan törölni akarod ezt az edzést?',
+    'history.viewHistory': 'Edzéselőzmények',
     
     // Home Screen
     'home.quickActions': 'Gyors műveletek',
