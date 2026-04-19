@@ -3,8 +3,11 @@ import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { View, StyleSheet } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useLanguageStore } from '../store/languageStore';
 
 export default function Layout() {
+  const { t } = useLanguageStore();
+
   return (
     <SafeAreaProvider>
       <View style={styles.container}>
@@ -20,8 +23,8 @@ export default function Layout() {
           <Tabs.Screen
             name="index"
             options={{
-              title: 'Home',
-              tabBarIcon: ({ color, size }) => (
+              title: t('nav.home'),
+              tabBarIcon: ({ color, size }: { color: string; size: number }) => (
                 <Ionicons name="home" size={size} color={color} />
               ),
             }}
@@ -29,8 +32,8 @@ export default function Layout() {
           <Tabs.Screen
             name="workout"
             options={{
-              title: 'Workout',
-              tabBarIcon: ({ color, size }) => (
+              title: t('nav.workout'),
+              tabBarIcon: ({ color, size }: { color: string; size: number }) => (
                 <Ionicons name="barbell" size={size} color={color} />
               ),
             }}
@@ -38,8 +41,8 @@ export default function Layout() {
           <Tabs.Screen
             name="routines"
             options={{
-              title: 'Routines',
-              tabBarIcon: ({ color, size }) => (
+              title: t('nav.routines'),
+              tabBarIcon: ({ color, size }: { color: string; size: number }) => (
                 <Ionicons name="list" size={size} color={color} />
               ),
             }}
@@ -47,8 +50,8 @@ export default function Layout() {
           <Tabs.Screen
             name="library"
             options={{
-              title: 'Library',
-              tabBarIcon: ({ color, size }) => (
+              title: t('nav.library'),
+              tabBarIcon: ({ color, size }: { color: string; size: number }) => (
                 <Ionicons name="book" size={size} color={color} />
               ),
             }}
@@ -56,8 +59,8 @@ export default function Layout() {
           <Tabs.Screen
             name="progress"
             options={{
-              title: 'Progress',
-              tabBarIcon: ({ color, size }) => (
+              title: t('nav.progress'),
+              tabBarIcon: ({ color, size }: { color: string; size: number }) => (
                 <Ionicons name="stats-chart" size={size} color={color} />
               ),
             }}
@@ -71,14 +74,14 @@ export default function Layout() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a1a1a',
+    backgroundColor: '#121212',
   },
   tabBar: {
     backgroundColor: '#1a1a1a',
     borderTopColor: '#333',
     borderTopWidth: 1,
-    height: 60,
-    paddingBottom: 8,
+    height: 70,
+    paddingBottom: 16,
     paddingTop: 8,
   },
   tabLabel: {
